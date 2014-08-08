@@ -49,9 +49,9 @@ li {
 	background-color: #cc0323
 }
 
-#right{
-	width: 100%;
-	float: right;
+#left{
+	width: 45%;
+	float: left;
 }
 
 p {
@@ -65,10 +65,11 @@ p {
 }
 
 table {
-	border: #000000 1px solid;
+	border: #000000 2px solid;
 	background-color: #acd1b2;
-	float: right;
+	float: left;
 	margin-right: 10px;
+  margin-left:10px;
 	border-bottom-right-radius: 15px;
 	border-bottom-left-radius: 15px;
 }
