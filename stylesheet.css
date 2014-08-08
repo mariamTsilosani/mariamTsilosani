@@ -86,6 +86,7 @@ td img {
 }
 
 th {
+  collspan=3
 	font-family: Verdana;
 	font-size: 1em;
 	font-weight: normal;
