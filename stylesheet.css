@@ -3,7 +3,7 @@ body {
 }
 
 h2 {
-	font-family: Verdana;
+	/*font-family: Verdana;*/
 	font-weight: bold;
 	text-align: center;
 	padding-top: 25px;
@@ -66,7 +66,7 @@ p {
 
 table {
 	border: #000000 2px solid;
-	background-color: #acd1b2;
+	/*background-color: #acd1b2;*/
 	float: left;
 	margin-right: 10px;
   margin-left:10px;
