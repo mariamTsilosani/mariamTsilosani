@@ -141,3 +141,18 @@ th {
 	font-variant: small-caps;
 	color: #ffffff;
 }
+
+span {
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+}
+div {
+	border-radius: 5px;
+	border: 2px solid #6495ED;
+	background-color: #BCD2EE;
+	height: 50px;
+	width: 120px;
+	margin: auto;
+	text-align: center;
+}
