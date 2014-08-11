@@ -7,6 +7,13 @@ body {
 	color: #3c4543;
 
 }
+.main{
+	height: 200px;
+	width: 200px;
+	color: blue;
+
+
+}
 
 h2 {
 	/*font-family: Verdana;*/
