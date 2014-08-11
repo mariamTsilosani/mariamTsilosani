@@ -8,6 +8,7 @@ body {
 
 }
 .main{
+	position: relative;
 	height: 200px;
 	width: 200px;
 	background-color: #000000;
