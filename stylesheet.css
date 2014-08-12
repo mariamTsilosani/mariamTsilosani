@@ -20,6 +20,12 @@ body {
 	float: right;
 }
 
+a:hover{
+
+	color:#000000;
+}
+
+
 h2 {
 	/*font-family: Verdana;*/
 	font-weight: bold;
