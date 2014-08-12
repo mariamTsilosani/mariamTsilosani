@@ -24,6 +24,9 @@ a:hover{
  color:red;
 }
 
+a:visited{
+ color:#EE9A00;
+}
 
 h2 {
 	/*font-family: Verdana;*/
