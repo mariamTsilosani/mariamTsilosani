@@ -63,8 +63,8 @@ ul{
 }
 
 li {
-	/*display: inline;*/
-	border: 2px solid #000000;
+	display: inline;
+	border: 1px solid #000000;
 	font-family: Futura, Tahoma, sans-serif;
 	color: #ffffff;
 	padding: 5px;
