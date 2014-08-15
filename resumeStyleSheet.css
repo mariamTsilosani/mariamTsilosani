@@ -43,7 +43,7 @@ h5{
 }
 
 .right p {
-	margin-left: 5px;
+	margin-left: 10px;
 	margin-right: 5px;
 	margin-top: -10px;
 	font-family: Garamond, serif;
@@ -51,7 +51,7 @@ h5{
 }
 
 li {
-	list-style-type: square;
+	list-style-type: circle;
 }
 
 a:hover {
