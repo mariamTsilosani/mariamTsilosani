@@ -42,6 +42,11 @@ h5{
 
 }
 
+a{
+  text-decoration: none;
+
+}
+
 .right p {
 	margin-left: 15px;
 	margin-right: 5px;
