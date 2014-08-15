@@ -51,7 +51,7 @@ h5{
 }
 
 li {
-	list-style-type: circle;
+	list-style-type: circle fill;
 }
 
 a:hover {
