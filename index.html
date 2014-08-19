@@ -6,10 +6,12 @@
  MariamTsilosani
 </title>
 <ul>
-<li><a href="index.html">Home</a></li>
+<li id="page"><a href="index.html">Home</a></li>
 <li><a href="https://sakai.rutgers.edu/portal">Sakai</a></li>
 <li><a href="resume.html">Resume</a></li>
 <li><a href="https://www.facebook.com/tsilosani">Facebook!</a></li>
+<li><a href="notesPass.html">Notes</a></li>
+<li id="name"><a href="notesPass.html">Hello</a></li>
 </ul>
 </head>
 
@@ -18,9 +20,11 @@
 <body>
   <h3 class="header">Mariam's website (Under Construction)</h3>
   <script>
-  prompt("Enter your Name:)")
-  console.log("hey")
+  var name = prompt("Enter your Name:)")
+  document.getElementById("name").innerHTML = "Hello " + name
+
   </script>
+  <iframe src="https://www.facebook.com/tsilosani"></iframe>
 
 
 </body>

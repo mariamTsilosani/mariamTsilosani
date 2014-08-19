@@ -7,6 +7,12 @@ body {
 	color: #3c4543;
 
 }
+
+iframe{
+	width:100%;
+	hight:100%;
+
+}
 .main{
 	position: relative;
 	height: 200px;
@@ -14,6 +20,13 @@ body {
 	background-color: #0000DC;
 
 
+}
+#name{
+	color:#8C8C8C;
+}
+#page{
+
+	background-color:black;
 }
 .mainTable{
 
