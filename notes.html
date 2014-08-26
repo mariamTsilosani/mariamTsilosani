@@ -28,23 +28,41 @@
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
     <script>
-      var myDataRef = new Firebase('https://amber-heat-5444.firebaseio.com/');
-      $('#messageInput').keypress(function (e) {
-        if (e.keyCode == 13) {
-          var name = $('#nameInput').val();
-          var text = $('#messageInput').val();
-          myDataRef.push({name: name, text: text});
-          $('#messageInput').val('');
-        }
-      });
-      myDataRef.on('child_added', function(snapshot) {
-        var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
-      });
-      function displayChatMessage(name, text) {
-        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-      };
+      $(document).ready(function(){
+        var host = 'https://amber-heat-5444.firebaseio.com/';
+
+        console.log($(".remove"));
+        $(document).delegate(".remove", "click", function() {
+          var ref = new Firebase(host + $(this).attr("href"));
+          ref.remove();
+          return false;
+        });
+
+        var myDataRef = new Firebase(host);
+        $('#messageInput').keypress(function (e) {
+          if (e.keyCode == 13) {
+            var name = $('#nameInput').val();
+            var text = $('#messageInput').val();
+            myDataRef.push({name: name, text: text});
+            $('#messageInput').val('');
+          }
+        });
+        myDataRef.on('child_added', function(snapshot) {
+          var message = snapshot.val();
+          displayChatMessage(message.name, message.text, snapshot.ref().path.m[0]);
+        });
+
+        myDataRef.on('child_removed', function(snapshot) {
+          $("#" + snapshot.ref().path.m[0]).remove();
+        });
+
+        function displayChatMessage(name, text, url) {
+          var remove = " <a class='remove' href=" + url + ">Remove</a>";
+          var el = $('<div/>').attr("id",url).text(text).prepend($('<em/>').text(name+': ')).append(remove);
+          el.appendTo($('#messagesDiv'));
+          $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+        };
+    });
     </script>
 
 
