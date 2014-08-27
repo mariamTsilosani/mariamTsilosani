@@ -3,67 +3,131 @@
 <DOCTYPE html>
 <head>
 
-  <link rel="shortcut icon" type="image/x-icon" href="sunglasses.png" />
+<link rel="shortcut icon" type="image/x-icon" href="sunglasses.png" />
 
-  <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Foundation | Welcome</title>
+<link rel="stylesheet" href="css/foundation.css" />
+<script src="js/vendor/modernizr.js"></script>
+<script src="js/foundation.min.js"></script>
 
 
 <title>
-  Notes
+Notes
 </title>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="https://sakai.rutgers.edu/portal">Sakai</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="https://www.facebook.com/tsilosani">Facebook!</a></li>
-<li id="page"><a href="notesPass.html">Notes</a></li>
-</ul>
 
+
+
+
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+
+    <li class="name">
+      <h1>
+        <a href="#">
+          Top Bar Title
+        </a>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="has-dropdown">
+        <a href="#">Menue</a>
+        <ul class="dropdown">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://sakai.rutgers.edu/portal">Sakai</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="https://www.facebook.com/tsilosani">Facebook!</a></li>
+            <li id="page"><a href="notesPass.html">Notes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
 
 </head>
 <body>
+  <div class="row">
+    <h2>Notes</h2>
+  </div>
+  <div id='messagesDiv' class="row"></div>
+  <div class="row">
+    <div class="row">
+      <div class="large-10 columns">
+        <input type='text' id='nameInput' placeholder='Name'>
+        <textarea id="messageInput" rows="6" placeholder='Message'></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns large-offset-8">
+        <button id='inputButton' class="button secondary round">Submit</button>
+      </div>
+    </div>
+  </div>
 
-    <div id='messagesDiv'></div>
-    <input type='text' id='nameInput' placeholder='Name'>
-    <input type='text' id='messageInput' placeholder='Message'>
-    <script>
-      $(document).ready(function(){
-        var host = 'https://amber-heat-5444.firebaseio.com/';
 
-        console.log($(".remove"));
-        $(document).delegate(".remove", "click", function() {
-          var ref = new Firebase(host + $(this).attr("href"));
-          ref.remove();
-          return false;
-        });
 
-        var myDataRef = new Firebase(host);
-        $('#messageInput').keypress(function (e) {
-          if (e.keyCode == 13) {
-            var name = $('#nameInput').val();
-            var text = $('#messageInput').val();
-            myDataRef.push({name: name, text: text});
-            $('#messageInput').val('');
-          }
-        });
-        myDataRef.on('child_added', function(snapshot) {
-          var message = snapshot.val();
-          displayChatMessage(message.name, message.text, snapshot.ref().path.m[0]);
-        });
+  <script>
+    $(document).ready(function(){
+      $(document).foundation();
 
-        myDataRef.on('child_removed', function(snapshot) {
-          $("#" + snapshot.ref().path.m[0]).remove();
-        });
+      var host = 'https://amber-heat-5444.firebaseio.com/';
 
-        function displayChatMessage(name, text, url) {
-          var remove = " <a class='remove' href=" + url + ">Remove</a>";
-          var el = $('<div/>').attr("id",url).text(text).prepend($('<em/>').text(name+': ')).append(remove);
-          el.appendTo($('#messagesDiv'));
-          $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-        };
-    });
-    </script>
+      console.log($(".remove"));
+      $(document).delegate(".remove", "click", function() {
+        var ref = new Firebase(host + $(this).attr("href"));
+        ref.remove();
+        return false;
+      });
+
+      var myDataRef = new Firebase(host);
+      $('#inputButton').on("click", function (e) {
+        var name = $('#nameInput').val();
+        var text = $('#messageInput').val();
+        myDataRef.push({name: name, text: text});
+        $('#messageInput').val('');
+        $('#nameInput').val('');
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        console.log(message.text);
+        displayChatMessage(message.name, message.text, snapshot.ref().path.m[0]);
+      });
+
+      myDataRef.on('child_removed', function(snapshot) {
+        $("#" + snapshot.ref().path.m[0]).parent().parent().remove();
+      });
+
+      function displayChatMessage(name, text, url) {
+        var row = $('<div></div>').addClass("row");
+        var col1 = $('<div></div>').addClass("large-10 columns");
+        var col2 = $('<div></div>').addClass("large-2 columns");
+        col1.appendTo(row);
+        col2.appendTo(row);
+
+        var remove = "<a class='button secondary remove' href=" + url + ">Remove</a>";
+        var p = $("<p></p>").prepend(text.replace(/\n/g,"<br>"));
+        var el = $('<div/>').attr("id",url).prepend(p).prepend($('<h5/>').text(name+': '));
+        el.addClass("panel");
+        el.appendTo(col1);
+        col2.append(remove);
+
+
+        row.appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+  });
+  </script>
 
 
 
