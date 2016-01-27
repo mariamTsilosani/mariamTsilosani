@@ -3,32 +3,32 @@
 -------------------------*/
 
 body{
-	font-family: Oswald, Arial, sans-serif;
+    font-family: Oswald, Arial, sans-serif;
     font-size:14pt;
     font-weight:300;
     color:#6d6d6d;
-	overflow-x:hidden;
+    overflow-x:hidden;
 }
 
 a{
-	color:#FF6F00;
-	text-decoration:none
+    color:#FF6F00;
+    text-decoration:none
 }
 
 a:hover,a:focus{
-	color:#FFA000;
-	text-decoration:underline
+    color:#FFA000;
+    text-decoration:underline
 }
 
 a:focus, .btn:focus {
-	outline: none;
+    outline: none;
 }
 
 /*-----------------------
 ----- Typo Styles ------
 -------------------------*/
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
-	font-weight:300;
+    font-weight:300;
 }
 
 .big-text{
@@ -74,16 +74,16 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 /*-----------------------
 ---- NavBar Styles ----
 -------------------------*/
+
 nav .navBarButton:hover, 
 nav .navBarButton:focus,
 nav .navBarButton:active {
     background-color: transparent;
     background: transparent !important;
     color: #0086b3 !important;
-
 }
 nav a {
-  padding-top: 30px !important;
+ 
   padding-bottom: 30px !important;
   font-size: 24px;
   color: white !important;
@@ -103,7 +103,7 @@ nav a {
 #main-nav{
     font-size: 24pt;
     background:transparent;
-    color:#fff;
+    
     box-shadow:0 0 0px transparent;
     -webkit-transition:background 0.3s ease-out;
     transition:background 0.3s ease-out;
@@ -125,31 +125,36 @@ nav.navbar.shrink {
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
-
 nav.shrink a{
-  padding-top: 20px !important;
+  
   padding-bottom: 20px !important;
   /*font-size: 22px;*/
   color: gray !important;
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
+
+#main-nav .navbar-toggle .icon-bar{
+    background:#fff;
+}
+#main-nav{
+    padding-top: 30px !important;
+}
+#main-nav .shrink{
+    padding-top: -10px !important;
+}
 nav.shrink p{
-  padding-top: 10px !important;
   padding-bottom: 10px !important;
-  /*font-size: 28px;*/
   color: black !important;
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
 nav.shrink .navbar-brand {
-/*  font-size: 25px;*/
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
-
 nav.shrink .navbar-toggle {
-  padding: 4px 5px;
+  
   margin: 8px 15px 8px 0;
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
