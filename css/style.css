@@ -406,7 +406,7 @@ nav.shrink .navbar-toggle {
     height:50px;
     line-height:50px;
     text-align:center;
-    background:#0086b3;
+    background:#004c66;
     border-radius:0% 0% 0% 0%;
     padding-left: 2px;
     margin-right:5px;
@@ -416,7 +416,7 @@ nav.shrink .navbar-toggle {
 }
 
 #contact .contact-list a{
-    color: #6d6d6d;
+    color: #6d6d6d; 
     text-decoration: none;
 }
 
@@ -425,7 +425,7 @@ nav.shrink .navbar-toggle {
 }
 
 #contact .contact-list a:hover i{
-    background:#00ace6;
+    background:#0086b3;
     border-radius:50% 50% 50% 50%;
 }
 
@@ -481,7 +481,6 @@ nav.shrink .navbar-toggle {
     height:50px;
     line-height:50px;
     text-align:center; 
-    
     margin-right:5px;
     border: 1px solid #fff;
     -webkit-transition:all 0.3s;
@@ -489,7 +488,7 @@ nav.shrink .navbar-toggle {
 }
 
 .social a:hover {
-    color: #0086b3;
+    color: #004c66;
     border-radius:50% 50% 50% 50%;
 }
 
