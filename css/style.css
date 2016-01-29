@@ -238,7 +238,8 @@ nav.shrink .navbar-toggle {
     text-align:center;
 }
 #about{
-    padding-top:50px
+    padding-top:50px;
+    padding-bottom:130px;
 }
 
 #about .about-text{
@@ -289,7 +290,7 @@ nav.shrink .navbar-toggle {
 }
 
 #about .timeline div i{
-    background: #0086b3;
+    background: #004c66;
     color:#fff;
     width:60px;
     height:60px;
@@ -304,7 +305,7 @@ nav.shrink .navbar-toggle {
 #about .timeline div h3{
     padding-top:36px;
     margin-left:30px;
-    color: #0086b3;
+    color: #004c66;
     font-weight: 500;
 }
 
@@ -324,7 +325,7 @@ nav.shrink .navbar-toggle {
 #skills{
     padding-top:60px;
     padding-bottom:120px;
-    border-top:10px solid #004c66;
+    /*border-top:10px solid #004c66;*/
 }
 
 .chart {
@@ -504,13 +505,15 @@ nav.shrink .navbar-toggle {
 
 .bg2{
     color:#fff;
-    background:#0086b3;
+    background:#004c66;
 }
 
 .blue{
-    color:#0086b3;
+    color:#004c66;
 }
 .ring{
-  background: #00ace6;
+  background: #0086b3;
 }
+
+
 

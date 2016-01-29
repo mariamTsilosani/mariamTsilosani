@@ -36,7 +36,11 @@ $(document).ready(function() {
     }
     });
 
-    /* Change navbar link color */
+    /* Collapsing Nav Bar */
+
+    $('.navbar-nav').on('click', 'li a', function() {
+      $('.navbar-collapse').collapse('hide');
+    });
 
 
     
@@ -67,7 +71,6 @@ $(document).ready(function() {
     /* About Me */
 
      $("#aboutMe").click(function() {
-      $('#aboutMe').removeClass('grey');
          $('html, body').animate({
            scrollTop: parseInt($("#about").offset().top)
          }, 1700);
@@ -76,9 +79,7 @@ $(document).ready(function() {
     var controller;
     $(document).ready(function($) {
 
-        if ($(window).width() > 769) {
-          $('#aboutMe').addClass('active');
-          $('#aboutMe').removeClass('grey');
+        if ($(window).width() > 769) {          
             // init controller
             controller = new ScrollMagic();
             // build scene
@@ -153,17 +154,6 @@ $(document).ready(function() {
          }, 2000);
     });
 
-
-
-    /*var map;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('gmap'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-      });
-    }*/
-
-
      /* === Contact Map ===*/
 
 
@@ -171,7 +161,7 @@ $(document).ready(function() {
 
           function initialize() {
 
-            /* position Amsterdam */
+            /* position Morristown */
             var latlng = new google.maps.LatLng(40.796645, -74.481934);
 
             var mapOptions = {
@@ -183,33 +173,15 @@ $(document).ready(function() {
               scrollwheel: false,
               zoom: 13
             };
-
-           /* var mapOptions = {
-                zoom: mapPoint.zoom,
-                center: latlng,
-                zoomControl : true,
-                panControl : false,
-                streetViewControl : false,
-                mapTypeControl: false,
-                overviewMapControl: false,
-                scrollwheel: false,
-                styles: mapstyles
-              }*/
             
             var marker = new google.maps.Marker({
               position: latlng,
               url: '/',
               animation: google.maps.Animation.DROP
             });
-            
-            
+             
             var map = new google.maps.Map(document.getElementById("gmap"), mapOptions);
             marker.setMap(map);
           };
-        
-   
-
-
-
 });
  
