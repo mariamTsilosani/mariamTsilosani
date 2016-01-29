@@ -36,15 +36,6 @@ $(document).ready(function() {
     }
     });
 
-    /* Collapsing Nav Bar */
-
-    $('.navbar-nav').on('click', 'li a', function() {
-      $('.navbar-collapse').collapse('hide');
-    });
-
-
-    
-
     /* Header */
     $.backstretch('img/bannerFive.jpg');
 
