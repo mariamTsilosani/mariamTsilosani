@@ -42,7 +42,7 @@ $(document).ready(function() {
     
 
     /* Header */
-    $.backstretch('img/bannerFive.JPG');
+    $.backstretch('img/bannerFive.jpg');
 
     $(window).scroll( function() {
     var st = $(this).scrollTop(),
