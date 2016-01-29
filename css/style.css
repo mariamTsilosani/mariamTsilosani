@@ -3,32 +3,32 @@
 -------------------------*/
 
 body{
-    font-family: Oswald, Arial, sans-serif;
+	font-family: Oswald, Arial, sans-serif;
     font-size:14pt;
     font-weight:300;
     color:#6d6d6d;
-    overflow-x:hidden;
+	overflow-x:hidden;
 }
 
 a{
-    color:#FF6F00;
-    text-decoration:none
+	color:#FF6F00;
+	text-decoration:none
 }
 
 a:hover,a:focus{
-    color:#FFA000;
-    text-decoration:underline
+	color:#FFA000;
+	text-decoration:underline
 }
 
 a:focus, .btn:focus {
-    outline: none;
+	outline: none;
 }
 
 /*-----------------------
 ----- Typo Styles ------
 -------------------------*/
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
-    font-weight:300;
+	font-weight:300;
 }
 
 .big-text{
@@ -109,7 +109,7 @@ nav a {
     transition:background 0.3s ease-out;
 }
 #main-nav .navbar-brand{
-    font-size:20pt;
+    font-size:24pt;
     font-weight:700;
     text-transform: uppercase;
 }
@@ -127,8 +127,7 @@ nav.navbar.shrink {
 }
 nav.shrink a{
   
-  padding-bottom: 20px !important;
-  /*font-size: 22px;*/
+  padding-bottom: 15px !important;
   color: gray !important;
   -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
@@ -137,11 +136,14 @@ nav.shrink a{
 #main-nav .navbar-toggle .icon-bar{
     background:#fff;
 }
+.icon-bar.grayBar{
+    background:gray !important;
+}
 #main-nav{
     padding-top: 30px !important;
 }
-#main-nav .shrink{
-    padding-top: -10px !important;
+#main-nav.pad{
+    padding-top: 10px !important;
 }
 nav.shrink p{
   padding-bottom: 10px !important;
@@ -512,5 +514,4 @@ nav.shrink .navbar-toggle {
 .ring{
   background: #00ace6;
 }
-
 

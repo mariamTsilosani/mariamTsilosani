@@ -25,11 +25,14 @@ $(document).ready(function() {
     if ($(window).scrollTop()< ($(window).height()-35)){
         $('nav').addClass('navbar-transparent');
         $('nav').removeClass('shrink');
-      
+        $('#main-nav').removeClass('pad');
+        $('.icon-bar').removeClass('grayBar');
     }
     else{
       $('nav').addClass('shrink');
       $('nav').removeClass('navbar-transparent');
+      $('#main-nav').addClass('pad');
+      $('.icon-bar').addClass('grayBar');
     }
     });
 
@@ -39,7 +42,7 @@ $(document).ready(function() {
     
 
     /* Header */
-    $.backstretch('img/bannerFive.jpg');
+    $.backstretch('img/bannerFive.JPG');
 
     $(window).scroll( function() {
     var st = $(this).scrollTop(),
