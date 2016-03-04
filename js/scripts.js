@@ -1,13 +1,7 @@
 $(document).ready(function() {
     
-     /*============================================
-  Page Preloader
-  ==============================================*/
 
     $('#home').height($(window).height()+50);
-
-    
-    //$('body').backstretch('img/computer.png');
      
       /* Shrink NavBar */
     $(window).scroll(function() {
